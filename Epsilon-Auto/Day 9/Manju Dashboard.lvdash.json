@@ -1,0 +1,312 @@
+{
+  "datasets": [
+    {
+      "name": "dbc84bd5",
+      "displayName": "SQL Dataset",
+      "queryLines": [
+        "select * from manju_bronze.customers_pl"
+      ],
+      "catalog": "auto",
+      "schema": "manju_bronze"
+    }
+  ],
+  "pages": [
+    {
+      "name": "9444ab1d",
+      "displayName": "Dashboard",
+      "layout": [
+        {
+          "widget": {
+            "name": "dbb0b78e",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "dbc84bd5",
+                  "fields": [
+                    {
+                      "name": "count(customer_id)",
+                      "expression": "COUNT(`customer_id`)"
+                    },
+                    {
+                      "name": "customer_state",
+                      "expression": "`customer_state`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "pie",
+              "encodings": {
+                "angle": {
+                  "fieldName": "count(customer_id)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Count of customer_id"
+                },
+                "color": {
+                  "fieldName": "customer_state",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "customer_state"
+                },
+                "label": {
+                  "show": true
+                }
+              },
+              "frame": {
+                "showDescription": false,
+                "title": "Customer Distribution by State",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 1,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "3197b175",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "dbc84bd5",
+                  "fields": [
+                    {
+                      "name": "customer_id",
+                      "expression": "`customer_id`"
+                    },
+                    {
+                      "name": "customer_name",
+                      "expression": "`customer_name`"
+                    },
+                    {
+                      "name": "customer_email",
+                      "expression": "`customer_email`"
+                    },
+                    {
+                      "name": "customer_city",
+                      "expression": "`customer_city`"
+                    },
+                    {
+                      "name": "customer_state",
+                      "expression": "`customer_state`"
+                    },
+                    {
+                      "name": "operation",
+                      "expression": "`operation`"
+                    },
+                    {
+                      "name": "sequenceNum",
+                      "expression": "`sequenceNum`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 1,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "customer_id",
+                    "title": "customer_id",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "displayName": "customer_id"
+                  },
+                  {
+                    "fieldName": "customer_name",
+                    "title": "customer_name",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "displayName": "customer_name"
+                  },
+                  {
+                    "fieldName": "customer_email",
+                    "title": "customer_email",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "displayName": "customer_email"
+                  },
+                  {
+                    "fieldName": "customer_city",
+                    "title": "customer_city",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "displayName": "customer_city"
+                  },
+                  {
+                    "fieldName": "customer_state",
+                    "title": "customer_state",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "displayName": "customer_state"
+                  },
+                  {
+                    "fieldName": "operation",
+                    "title": "operation",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "displayName": "operation"
+                  },
+                  {
+                    "fieldName": "sequenceNum",
+                    "title": "sequenceNum",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "displayName": "sequenceNum"
+                  }
+                ]
+              },
+              "invisibleColumns": [
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "_rescued_data",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100007,
+                  "title": "_rescued_data",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                }
+              ],
+              "allowHTMLByDefault": false,
+              "itemsPerPage": 25,
+              "paginationSize": "default",
+              "condensed": true,
+              "withRowNumber": false,
+              "frame": {
+                "title": "Customer Data Table",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 1,
+            "y": 13,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "19973732",
+            "queries": [
+              {
+                "name": "dashboards/01f057f7ac911c78bbbac6042085c61a/datasets/01f057f7cd07115f9418573783275a4a_operation",
+                "query": {
+                  "datasetName": "dbc84bd5",
+                  "fields": [
+                    {
+                      "name": "operation",
+                      "expression": "`operation`"
+                    },
+                    {
+                      "name": "operation_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "operation",
+                    "displayName": "operation",
+                    "queryName": "dashboards/01f057f7ac911c78bbbac6042085c61a/datasets/01f057f7cd07115f9418573783275a4a_operation"
+                  }
+                ]
+              },
+              "disallowAll": false,
+              "frame": {
+                "showTitle": true,
+                "title": "Select Operation",
+                "showDescription": true
+              }
+            }
+          },
+          "position": {
+            "x": 1,
+            "y": 0,
+            "width": 3,
+            "height": 1
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    }
+  }
+}
